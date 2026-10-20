@@ -1,0 +1,21 @@
+#sistema de credito - arketech
+empresa = input("Nome da empresa: ")
+faturamento = float(input("Faturamento mensal (R$): "))
+emprestimo = float(input("Valor do empréstimo (R$): "))
+
+parcela = emprestimo / 12
+
+print(f"\nEmpresa: {empresa}")
+print(f"Valor da parcela: R$ {parcela:.2f}")
+
+if faturamento <= 0 or emprestimo <= 0:
+    print("Digite valores maiores que zero.")
+
+elif parcela <= faturamento * 0.30:
+    print(f"Crédito APROVADO para {empresa}!")
+
+elif parcela <= faturamento * 0.50:
+    print(f"Crédito EM ANÁLISE para {empresa}!")
+
+else:
+    print(f"Crédito RECUSADO para {empresa}!")
