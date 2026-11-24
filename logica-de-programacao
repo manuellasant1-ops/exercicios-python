@@ -1,0 +1,129 @@
+# ==========================================
+# DESAFIOS ARKETECH - PROGRAMA COMPLETO
+# ==========================================
+
+# 1. Onboarding de Colaboradores
+print("--- 1. Onboarding de Colaboradores ---")
+nome = input("Digite o nome do novo funcionário: ")
+cargo = input("Digite o cargo: ")
+print(f"Bem-vindo(a) à ArkeTech, {nome}! Seu acesso como {cargo} foi criado com sucesso.\n")
+
+# 2. Cálculo de Horas Extras
+print("--- 2. Cálculo de Horas Extras ---")
+valor_hora = float(input("Qual o valor da hora de trabalho? R$ "))
+horas_extras = float(input("Quantidade de horas extras trabalhadas: "))
+total_pagar = valor_hora * horas_extras
+print(f"Valor total a ser pago pelas horas extras: R$ {total_pagar:.2f}\n")
+
+# 3. Reembolso Corporativo
+print("--- 3. Reembolso Corporativo ---")
+transporte = float(input("Gasto com transporte: R$ "))
+alimentacao = float(input("Gasto com alimentação: R$ "))
+hospedagem = float(input("Gasto com hospedagem: R$ "))
+total_reembolso = transporte + alimentacao + hospedagem
+print(f"Valor final do reembolso corporativo: R$ {total_reembolso:.2f}\n")
+
+# 4. Simulador de Margem de Lucro
+print("--- 4. Simulador de Margem de Lucro ---")
+custo_fabricacao = float(input("Custo de fabricação do produto: R$ "))
+preco_venda = custo_fabricacao * 1.35
+print(f"Preço de venda (com 35% de margem): R$ {preco_venda:.2f}\n")
+
+# 5. Validador de Idade para Contratação
+print("--- 5. Validador de Idade para Contratação ---")
+ano_nascimento = int(input("Ano de nascimento do candidato: "))
+ano_atual = 2026
+idade = ano_atual - ano_nascimento
+print(f"Candidato apto (24 anos ou menos)? {idade <= 24}\n")
+
+# 6. Controle de Catraca
+print("--- 6. Controle de Catraca ---")
+status = input("Status da credencial (ativa/bloqueada): ").strip().lower()
+if status == "ativa":
+    print("Acesso Liberado\n")
+else:
+    print("Acesso Negado: Procure a portaria\n")
+
+# 7. Esteira de Aprovação de Crédito B2B
+print("--- 7. Esteira de Aprovação de Crédito B2B ---")
+faturamento = float(input("Faturamento da empresa cliente: R$ "))
+if faturamento > 100000:
+    print("Limite aprovado: R$ 20.000\n")
+elif 50000 <= faturamento <= 100000:
+    print("Limite aprovado: R$ 10.000\n")
+else:
+    print("Crédito Reprovado\n")
+
+# 8. Auditoria de Desempenho
+print("--- 8. Auditoria de Desempenho ---")
+faltas = int(input("Número de faltas injustificadas: "))
+vendas = float(input("Valor total de vendas: R$ "))
+if faltas == 0 and vendas > 50000:
+    print("PLR Aprovada\n")
+else:
+    print("PLR Negada\n")
+
+# 9. Precificação Dinâmica por Região
+print("--- 9. Precificação Dinâmica por Região ---")
+regiao = input("Sigla da região (S, SE, CO, NE, N): ").strip().upper()
+if regiao in ["S", "SE"]:
+    print("Frete: R$ 15,00\n")
+elif regiao == "CO":
+    print("Frete: R$ 25,00\n")
+elif regiao in ["NE", "N"]:
+    print("Frete: R$ 35,00\n")
+else:
+    print("Região inválida.\n")
+
+# 10. Alerta de Estoque Mínimo
+print("--- 10. Alerta de Estoque Mínimo ---")
+estoque = int(input("Quantidade atual do produto no estoque: "))
+if estoque <= 15:
+    print("COMPRA URGENTE\n")
+elif 16 <= estoque <= 50:
+    print("ESTOQUE REGULAR\n")
+else:
+    print("ESTOQUE CHEIO\n")
+
+# 11. Menu de Autoatendimento Contínuo
+print("--- 11. Menu de Autoatendimento Contínuo ---")
+while True:
+    matricula = input("Digite sua matrícula para bater ponto (ou 0000 para sair): ")
+    if matricula == "0000":
+        print("Modo de manutenção encerrado.\n")
+        break
+    print(f"Ponto registrado para a matrícula {matricula}.")
+
+# 12. Geração Automática de E-mails
+print("--- 12. Geração Automática de E-mails ---")
+funcionarios = ["ana", "carlos", "beatriz", "daniel"]
+for funcionario in funcionarios:
+    print(f"{funcionario}@arketech.com")
+print()
+
+# 13. Bloqueio por Tentativas de Login
+print("--- 13. Bloqueio por Tentativas de Login ---")
+senha_correta = "Admin123"
+tentativas = 0
+
+while tentativas < 3:
+    senha = input("Digite a senha: ")
+    if senha == senha_correta:
+        print("Login efetuado com sucesso!\n")
+        break
+    else:
+        tentativas += 1
+        print(f"Senha incorreta. Tentativa {tentativas} de 3.")
+
+if tentativas == 3:
+    print("Conta bloqueada.\n")
+
+# 14. Balanço Mensal de Vendas
+print("--- 14. Balanço Mensal de Vendas ---")
+faturamento_trimestre = [12000, 15000, 18000]
+total_faturamento = 0
+
+for valor in faturamento_trimestre:
+    total_faturamento += valor
+
+print(f"Faturamento total do trimestre: R$ {total_faturamento:.2f}")
